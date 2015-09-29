@@ -1,0 +1,37 @@
+package vjTools;
+import java.util.Scanner;
+import java.io.File;
+
+
+public class listDirContents {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		File file = null;
+		String[] paths;
+		
+		Scanner reader = new Scanner(System.in);
+		System.out.println("Enter the dir to get a list of files:");
+		String dirPath = reader.nextLine();
+		//System.out.println("path u entered is: " + dirPath);
+		
+		try{
+			//create new file obj
+			file = new File(dirPath);
+			
+			//array of files and dirs
+			paths = file.list();
+			
+			for(String path:paths)
+			{
+				System.out.println(path);
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+	}
+
+}
